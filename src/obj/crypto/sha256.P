@@ -1,0 +1,2 @@
+obj/crypto/sha256.o: crypto/sha256.cpp crypto/sha256.h crypto/common.h
+crypto/sha256.cpp crypto/sha256.h crypto/common.h :

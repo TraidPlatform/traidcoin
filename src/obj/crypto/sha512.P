@@ -1,0 +1,2 @@
+obj/crypto/sha512.o: crypto/sha512.cpp crypto/sha512.h crypto/common.h
+crypto/sha512.cpp crypto/sha512.h crypto/common.h :

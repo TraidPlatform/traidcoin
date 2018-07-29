@@ -1,0 +1,4 @@
+obj/crypto/hmac_sha256.o: crypto/hmac_sha256.cpp crypto/hmac_sha256.h \
+ crypto/sha256.h
+crypto/hmac_sha256.cpp crypto/hmac_sha256.h :
+ crypto/sha256.h :
