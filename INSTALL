@@ -1,0 +1,9 @@
+Building Traid
+
+See doc/readme-qt.rst for instructions on building Traid QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Traid.
+
+See doc/build-*.txt for instructions on building Traidd,
+the intended-for-services, no-graphical-interface, reference
+implementation of Traid.

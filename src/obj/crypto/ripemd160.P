@@ -1,0 +1,4 @@
+obj/crypto/ripemd160.o: crypto/ripemd160.cpp crypto/ripemd160.h \
+ crypto/common.h
+crypto/ripemd160.cpp crypto/ripemd160.h :
+ crypto/common.h :

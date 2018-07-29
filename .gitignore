@@ -1,0 +1,14 @@
+# ignore a single file
+compile-blk.sh
+.DS_Store
+bin/
+traid.pro
+traidd
+Traid-qt
+qrc_bitcoin\.cpp
+build/
+release/
+scripts/
+wallets/
+*.qm
+

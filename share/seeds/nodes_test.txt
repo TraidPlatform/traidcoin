@@ -1,0 +1,2 @@
+# List of fixed seed nodes for testnet
+[2001:19f0:7001:20be:5400:01ff:fe97:0f14]:53569
