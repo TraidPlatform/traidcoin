@@ -38,7 +38,7 @@ TRAID coin is a PoW/PoS/Masternode hybrid cryptocurrency built on the Scrypt has
   </tr>
   <tr>
     <td colspan="2">Coinbase Maturity</td>
-    <td colspan="2">30 Blocks</td>
+    <td colspan="2">32 Blocks</td>
   </tr>
   <tr>
     <td colspan="2">Stake Minimum Age</td>
