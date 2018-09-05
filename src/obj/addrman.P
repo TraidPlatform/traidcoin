@@ -1,0 +1,8 @@
+obj/addrman.o: addrman.cpp addrman.h netbase.h compat.h serialize.h \
+ allocators.h support/cleanse.h version.h clientversion.h protocol.h \
+ chainparams.h bignum.h uint256.h util.h tinyformat.h sync.h \
+ threadsafety.h hash.h crypto/ripemd160.h crypto/sha256.h
+addrman.cpp addrman.h netbase.h compat.h serialize.h :
+ allocators.h support/cleanse.h version.h clientversion.h protocol.h :
+ chainparams.h bignum.h uint256.h util.h tinyformat.h sync.h :
+ threadsafety.h hash.h crypto/ripemd160.h crypto/sha256.h :

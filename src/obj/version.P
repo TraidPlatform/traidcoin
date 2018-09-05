@@ -1,0 +1,2 @@
+obj/version.o: version.cpp version.h clientversion.h
+version.cpp version.h clientversion.h :

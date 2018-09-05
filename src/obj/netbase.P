@@ -1,0 +1,8 @@
+obj/netbase.o: netbase.cpp netbase.h compat.h serialize.h allocators.h \
+ support/cleanse.h version.h clientversion.h hash.h uint256.h \
+ crypto/ripemd160.h crypto/sha256.h sync.h threadsafety.h util.h \
+ tinyformat.h
+netbase.cpp netbase.h compat.h serialize.h allocators.h :
+ support/cleanse.h version.h clientversion.h hash.h uint256.h :
+ crypto/ripemd160.h crypto/sha256.h sync.h threadsafety.h util.h :
+ tinyformat.h :

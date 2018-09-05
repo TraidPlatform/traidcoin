@@ -1,0 +1,16 @@
+obj/darksend.o: darksend.cpp darksend.h core.h uint256.h serialize.h \
+ allocators.h support/cleanse.h version.h clientversion.h script.h \
+ keystore.h key.h pubkey.h hash.h crypto/ripemd160.h crypto/sha256.h \
+ sync.h threadsafety.h bignum.h util.h tinyformat.h stealth.h main.h \
+ txmempool.h net.h compat.h limitedmap.h mruset.h netbase.h protocol.h \
+ chainparams.h scrypt.h activemasternode.h masternode.h base58.h init.h \
+ wallet.h walletdb.h db.h crypter.h ui_interface.h masternodeman.h \
+ masternode-payments.h darksend-relay.h instantx.h
+darksend.cpp darksend.h core.h uint256.h serialize.h :
+ allocators.h support/cleanse.h version.h clientversion.h script.h :
+ keystore.h key.h pubkey.h hash.h crypto/ripemd160.h crypto/sha256.h :
+ sync.h threadsafety.h bignum.h util.h tinyformat.h stealth.h main.h :
+ txmempool.h net.h compat.h limitedmap.h mruset.h netbase.h protocol.h :
+ chainparams.h scrypt.h activemasternode.h masternode.h base58.h init.h :
+ wallet.h walletdb.h db.h crypter.h ui_interface.h masternodeman.h :
+ masternode-payments.h darksend-relay.h instantx.h :

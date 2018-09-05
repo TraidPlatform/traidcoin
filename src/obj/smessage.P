@@ -1,0 +1,28 @@
+obj/smessage.o: smessage.cpp smessage.h \
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/db.h \
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/iterator.h \
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/slice.h \
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/status.h \
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/options.h \
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/write_batch.h \
+ net.h compat.h core.h uint256.h serialize.h allocators.h \
+ support/cleanse.h version.h clientversion.h script.h keystore.h key.h \
+ pubkey.h hash.h crypto/ripemd160.h crypto/sha256.h sync.h threadsafety.h \
+ bignum.h util.h tinyformat.h stealth.h limitedmap.h mruset.h netbase.h \
+ protocol.h chainparams.h db.h wallet.h walletdb.h crypter.h main.h \
+ txmempool.h scrypt.h ui_interface.h base58.h lz4/lz4.h init.h txdb.h \
+ txdb-leveldb.h ecwrapper.h lz4/lz4.c xxhash/xxhash.h xxhash/xxhash.c
+smessage.cpp smessage.h :
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/db.h :
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/iterator.h :
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/slice.h :
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/status.h :
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/options.h :
+ /mnt/Work/CRYPTO/Office/Project_Traid/Traid_Versions/git/traidcoin/src/leveldb/include/leveldb/write_batch.h :
+ net.h compat.h core.h uint256.h serialize.h allocators.h :
+ support/cleanse.h version.h clientversion.h script.h keystore.h key.h :
+ pubkey.h hash.h crypto/ripemd160.h crypto/sha256.h sync.h threadsafety.h :
+ bignum.h util.h tinyformat.h stealth.h limitedmap.h mruset.h netbase.h :
+ protocol.h chainparams.h db.h wallet.h walletdb.h crypter.h main.h :
+ txmempool.h scrypt.h ui_interface.h base58.h lz4/lz4.h init.h txdb.h :
+ txdb-leveldb.h ecwrapper.h lz4/lz4.c xxhash/xxhash.h xxhash/xxhash.c :
