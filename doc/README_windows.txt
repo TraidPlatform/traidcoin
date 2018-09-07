@@ -13,9 +13,9 @@ cryptographic software written by Eric Young (eay@cryptsoft.com).
 
 Intro
 -----
-Traid is a free open source project derived from Bitcoin, with
-the goal of providing a long-term energy-efficient scrypt-based crypto-currency.
-Built on the foundation of Bitcoin, PPCoin and NovaCoin, innovations such as proof-of-stake and scrypt
-help further advance the field of crypto-currency.
+TRAID coin is a PoW/PoS/Masternode hybrid cryptocurrency built on the Scrypt hashing algorithm  untill block 60000.
+Then TRAID coin will change its algorith to ASIC resistant NeoScrypt.
+Block rewards are split evenly between PoW and PoS. 2/3 of PoS rewards are allocated to Masternodes. 
+TRAID coin will be used as the main payment method on the upcoming Traid platform.
 
 The latest Windows binaries (.exe of qt-wallet) are available on Github, at https://github.com/traidcoin/traidcoin/releases
