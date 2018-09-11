@@ -1,0 +1,41 @@
+
+Traid Update - v2.0.0.0
+##############################################################################################								
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MANDATORY UPDATE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GUI Changes
+----------------------------------------------------------------------------------------------
+
+* Added auto refresh to "My Masternodes" tab in the QT wallet
+* Small bug fixes in the coin control form
+
+----------------------------------------------------------------------------------------------
+POW Changes
+----------------------------------------------------------------------------------------------
+
+* Hashing algorithm changed from Scrypt to NeoScrypt (ASIC RESISTANT)
+
+----------------------------------------------------------------------------------------------
+General & Blockchain Changes 
+----------------------------------------------------------------------------------------------
+
+* Changed Block Version from 7 to 8
+* Changed Proto, PoolProto, InstantXProto to 60029
+* Added Disconnect <60029 Proto Function after fork
+* Added Refresh Recent Connections Feature
+* Retarget Algorithm changed from Peercoin Retarget algo to OSS (OrbitShield)
+* Net.cpp SendData Interruption/Idle Peer fix
+* Improved Masternode Security
+* Masternodes are no longer capable of setting an external reward address
+* Added Checkpoints
+* Updated Documentation
+* Improved Several networking issue
+
+----------------------------------------------------------------------------------------------
+RPC Client Changes	 
+----------------------------------------------------------------------------------------------
+
+* Added `backtoblock` flag to easily roll back your blockheight
+
+##############################################################################################

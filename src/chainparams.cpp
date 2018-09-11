@@ -65,6 +65,8 @@ public:
 		nDefaultPort = 53569;
 		nRPCPort = 53568;
 		bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
+		/* The initial difficulty after switching to NeoScrypt (0.0625) */
+		bnNeoScryptFirstTarget = CBigNum(~uint256(0) >> 28);
 
 		// Build the genesis block. Note that the output of the genesis coinbase cannot
 		// be spent as it did not originally exist in the database.
@@ -84,6 +86,8 @@ public:
 		genesis.nTime = 1532887200;
 		genesis.nBits = 520159231;
 		genesis.nNonce = 591319;
+
+
 
 		hashGenesisBlock = genesis.GetHash();
 
@@ -141,6 +145,7 @@ public:
 		pchMessageStart[2] = 0x15;
 		pchMessageStart[3] = 0x1a;
 		bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
+		bnNeoScryptFirstTarget = CBigNum(~uint256(0) >> 20);
 		vAlertPubKey = ParseHex("04bec2d38c56a34920e0b4eae6718fb0a0bfc05bd30e676c48236552c35f72bac35e9905656373e04ed3b334cc23709955df30709f51757100edd616e2e4e6de9d");
 		nDefaultPort = 43569;
 		nRPCPort = 43568;
@@ -197,7 +202,7 @@ void SelectParams(CChainParams::Network network) {
 
 bool SelectParamsFromCommandLine() {
 
-	bool fTestNet = GetBoolArg("-testnet", false);
+	fTestNet = GetBoolArg("-testnet", false);
 
 	if (fTestNet) {
 		SelectParams(CChainParams::TESTNET);
