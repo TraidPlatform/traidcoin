@@ -2,7 +2,7 @@ Traid-qt: Qt5 GUI for Traid
 ===============================
 
 Build instructions
-===================
+=================== 
 
 Debian
 -------
@@ -105,6 +105,19 @@ FreeDesktop notification interface through DBUS using the following qmake option
 ::
 
     qmake "USE_DBUS=1"
+
+Generation of QR codes
+-----------------------
+
+libqrencode may be used to generate QRCode images for payment requests. 
+It can be downloaded from http://fukuchi.org/works/qrencode/index.html.en, or installed via your package manager. Pass the USE_QRCODE 
+flag to qmake to control this:
+
++--------------+--------------------------------------------------------------------------+
+| USE_QRCODE=0 | (the default) No QRCode support - libarcode not required                 |
++--------------+--------------------------------------------------------------------------+
+| USE_QRCODE=1 | QRCode support enabled                                                   |
++--------------+--------------------------------------------------------------------------+
 
 
 Berkely DB version warning
