@@ -84,7 +84,7 @@ void CActiveMasternode::ManageStatus()
                 LogPrintf("CActiveMasternode::ManageStatus() - Is capable master node!\n");
 
                 status = MASTERNODE_IS_CAPABLE;
-                notCapableReason = "";
+                notCapableReason = "TRAID Masternode successfully started";
 
                 pwalletMain->LockCoin(vin.prevout);
 
@@ -477,7 +477,7 @@ bool CActiveMasternode::EnableHotColdMasterNode(CTxIn& newVin, CService& newServ
     if(!fMasterNode) return false;
 
     status = MASTERNODE_REMOTELY_ENABLED;
-    notCapableReason = "";
+    notCapableReason = "TRAID Masternode successfully started";
 
     //The values below are needed for signing dseep messages going forward
     this->vin = newVin;
