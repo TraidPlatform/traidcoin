@@ -45,8 +45,8 @@ Value getinfo(const Array& params, bool fHelp)
     if (pwalletMain) {
         obj.push_back(Pair("walletversion", pwalletMain->GetVersion()));
         obj.push_back(Pair("balance", ValueFromAmount(pwalletMain->GetBalance())));
-        if(!fLiteMode)
-            obj.push_back(Pair("darksend_balance", ValueFromAmount(pwalletMain->GetAnonymizedBalance())));
+        //if(!fLiteMode)
+        //    obj.push_back(Pair("darksend_balance", ValueFromAmount(pwalletMain->GetAnonymizedBalance())));
         obj.push_back(Pair("newmint", ValueFromAmount(pwalletMain->GetNewMint())));
         obj.push_back(Pair("stake", ValueFromAmount(pwalletMain->GetStake())));
     }
@@ -60,8 +60,8 @@ Value getinfo(const Array& params, bool fHelp)
     obj.push_back(Pair("proxy", (proxy.first.IsValid() ? proxy.first.ToStringIPPort() : string())));
     obj.push_back(Pair("ip", GetLocalAddress(NULL).ToStringIP()));
 
-    diff.push_back(Pair("proof-of-work", GetDifficulty()));
-    diff.push_back(Pair("proof-of-stake", GetDifficulty(GetLastBlockIndex(pindexBest, true))));
+    diff.push_back(Pair("proof-of-work", GetDifficulty(GetPrevBlockIndex(pindexBest, 0, false))));
+    diff.push_back(Pair("proof-of-stake", GetDifficulty(GetPrevBlockIndex(pindexBest, 0, true))));
     obj.push_back(Pair("difficulty", diff));
 
     obj.push_back(Pair("testnet", TestNet()));

@@ -2,23 +2,35 @@
 <ui version="4.0">
  <class>CoinControlDialog</class>
  <widget class="QDialog" name="CoinControlDialog">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
+    <width>830</width>
     <height>630</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>660</width>
+    <width>830</width>
+    <height>630</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>830</width>
     <height>630</height>
    </size>
   </property>
@@ -552,7 +564,7 @@
       <bool>false</bool>
      </property>
      <property name="columnCount">
-      <number>11</number>
+      <number>7</number>
      </property>
      <attribute name="headerShowSortIndicator" stdset="0">
       <bool>true</bool>
@@ -562,7 +574,7 @@
      </attribute>
      <column>
       <property name="text">
-       <string/>
+       <string>#</string>
       </property>
       <property name="font">
        <font>
@@ -587,11 +599,6 @@
      </column>
      <column>
       <property name="text">
-       <string>Date</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
        <string>Confirmations</string>
       </property>
       <property name="toolTip">
@@ -600,27 +607,12 @@
      </column>
      <column>
       <property name="text">
+       <string>Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Priority</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string/>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string/>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string/>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string/>
       </property>
      </column>
     </widget>
