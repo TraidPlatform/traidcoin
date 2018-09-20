@@ -18,7 +18,7 @@ TRAID coin is a PoW/PoS/Masternode hybrid cryptocurrency built on the Scrypt has
 <table>
   <tr>
     <td colspan="2">Algo</td>
-    <td colspan="2">Scrypt -> NeoScrypt( > 60.000 block)</td>
+    <td colspan="2">NeoScrypt</td>
   </tr>
     <tr>
     <td colspan="2">Block time</td>
