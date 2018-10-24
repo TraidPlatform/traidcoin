@@ -1,0 +1,116 @@
+#!/bin/bash
+
+##################################################
+# Script updated by TRAID
+# https://www.traid.tv/
+##################################################
+
+LOG_FILE=/tmp/install.log
+
+decho () {
+  echo `date +"%H:%M:%S"` $1
+  echo `date +"%H:%M:%S"` $1 >> $LOG_FILE
+}
+
+error() {
+  local parent_lineno="$1"
+  local message="$2"
+  local code="${3:-1}"
+  echo "Error on or near line ${parent_lineno}; exiting with status ${code}"
+  exit "${code}"
+}
+trap 'error ${LINENO}' ERR
+
+clear
+
+cat <<'FIG'
+TRAID 
+FIG
+
+# Check for systemd
+systemctl --version >/dev/null 2>&1 || { decho "systemd is required. Please make sure you are using Ubuntu 16.04"  >&2; exit 1; }
+
+# Check if executed as root user
+if [[ $EUID -ne 0 ]]; then
+	echo -e "This script has to be run with \033[1msudo\033[0m"
+	exit 1
+fi
+
+#print variable on a screen
+decho "Please read instructions carefully before entering answers."
+
+read -e -p "VPS Server IP Address : " ip
+if [[ "$ip" == "" ]]; then
+	decho "ERROR: No IP address entered!"
+	exit 3
+fi
+read -e -p "Your Masternode Private Key (e.g. 5etAPe6RUbvtVQFThMWhhkJVyhmpeQsRTD8QTcSZxgQMksnQxSR) : " key
+if [[ "$key" == "" ]]; then
+	decho "ERROR: No masternode private key entered."
+	exit 3
+fi
+
+decho "Configuring and updating VPS, please wait..."
+decho "Updating System, please wait..."
+
+apt-get -y update >> $LOG_FILE 2>&1
+
+decho "Installing dependencies, please wait..."
+
+apt-get -y install pwgen
+apt-get -y install unzip
+apt-get -y install sudo
+
+decho "Cloning Traid, please wait..."
+
+git clone https://github.com/TraidPlatform/traidcoin.git ~/traid >> $LOG_FILE 2>&1
+cd ~/traid/compile-scripts >> $LOG_FILE 2>&1
+
+decho "Building Traid, please wait..."
+
+sudo chmod +x build-unix.sh clean.sh install-dependencies.sh && sudo ./build-unix.sh --install-dependencies>> $LOG_FILE 2>&1
+
+cd ~
+
+decho "Setting Traid Configuration, please wait..."
+
+user=`pwgen -s 5 1`
+password=`pwgen -s 64 1`
+
+echo 'Creating Traid.conf...'
+mkdir -p ~/.Traid/
+cat << EOF > ~/.Traid/Traid.conf
+rpcuser=$user
+rpcpassword=$password
+rpcallowip=127.0.0.1
+rpcport=53568
+listen=1
+server=1
+daemon=1
+masternode=1
+masternodeprivkey=$key
+masternodeaddr=$ip:53569
+EOF
+
+mv ~/traid/bin/traidd ~/
+
+rm -r ~/traid
+
+cd 
+
+start-stop-daemon --start --background --exec ~/traidd
+
+echo 'Traid has been launched, please wait...'
+
+sleep 10
+
+decho "Congratulations your VPS has successfully been setup!"
+echo ""
+echo "Please follow these steps to finish setting up your masternode: "
+echo "1 - In Local machine, Windows, Linux or MacOS restart your wallet."
+echo "2 - Once your wallet has restarted go to the masternode tab and start-all."
+echo "3 - Make sure that your wallet is unlocked and that confirmations of your transaction which includes Traid collateral exceeds 31."
+echo "4 - Then return to your VPS and wait for the wallet to be synced. You can check by typing ./traid getinfo and see if blocks count matches our official explorer"
+echo "5 - Then type './traidd masternode status' to see the status of your masternode."
+
+exit
