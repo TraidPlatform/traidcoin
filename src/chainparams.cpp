@@ -102,10 +102,16 @@ public:
 		base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0x06)(0x2D).convert_to_container<std::vector<unsigned char> >();
 		base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-		vSeeds.push_back(CDNSSeedData("tok", "66.42.32.24"));
-		vSeeds.push_back(CDNSSeedData("ams", "95.179.145.93"));
-		vSeeds.push_back(CDNSSeedData("nwy", "207.148.16.100"));
-		vSeeds.push_back(CDNSSeedData("la", "66.42.104.82"));
+        vSeeds.push_back(CDNSSeedData("seed1", "seed1.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed2", "seed2.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed3", "seed3.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed4", "seed4.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed5", "seed5.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed6", "seed6.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed7", "seed7.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed8", "seed8.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed9", "seed9.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("seed10", "seed10.traid.tv"));
 		convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
 
 		nPoolMaxTransactions = 3;
@@ -167,10 +173,11 @@ public:
 		base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
 		base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-		vSeeds.push_back(CDNSSeedData("tok", "66.42.32.24"));
-		vSeeds.push_back(CDNSSeedData("ams", "95.179.145.93"));
-		vSeeds.push_back(CDNSSeedData("nwy", "207.148.16.100"));
-		vSeeds.push_back(CDNSSeedData("la", "66.42.104.82"));
+	vSeeds.push_back(CDNSSeedData("testseed1", "testseed1.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("testseed2", "testseed2.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("testseed3", "testseed3.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("testseed4", "testseed4.traid.tv"));
+        vSeeds.push_back(CDNSSeedData("testseed5", "testseed5.traid.tv"));
 		convertSeeds(vFixedSeeds, pnTestnetSeed, ARRAYLEN(pnTestnetSeed), nDefaultPort);
 
 		nLastPOWBlock = 0x7fffffff;

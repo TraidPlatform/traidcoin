@@ -13,7 +13,7 @@ make -j$NB_CORES -f makefile.unix
 
 for var in "$@"
 do
-    if [ $var = "--gui" ]; then
+    if [ $var = "--with-gui" ]; then
         cd ..
         qmake CONFIG+=debug
         make -j$NB_CORES

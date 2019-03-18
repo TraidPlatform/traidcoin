@@ -119,15 +119,15 @@ void MasternodeManager::updateAdrenalineNode(QString alias, QString addr, QStrin
 
     QTableWidgetItem *aliasItem = new QTableWidgetItem(alias);
     QTableWidgetItem *addrItem = new QTableWidgetItem(addr);
-    QTableWidgetItem *rewardAddressItem = new QTableWidgetItem(rewardAddress);
-    QTableWidgetItem *rewardPercentageItem = new QTableWidgetItem(rewardPercentage);
+    //QTableWidgetItem *rewardAddressItem = new QTableWidgetItem(rewardAddress);
+    //QTableWidgetItem *rewardPercentageItem = new QTableWidgetItem(rewardPercentage);
     QTableWidgetItem *statusItem = new QTableWidgetItem(status);
 
     ui->tableWidget_2->setItem(nodeRow, 0, aliasItem);
     ui->tableWidget_2->setItem(nodeRow, 1, addrItem);
-    ui->tableWidget_2->setItem(nodeRow, 2, rewardPercentageItem);
-    ui->tableWidget_2->setItem(nodeRow, 3, rewardAddressItem);
-    ui->tableWidget_2->setItem(nodeRow, 4, statusItem);
+    //ui->tableWidget_2->setItem(nodeRow, 2, rewardPercentageItem);
+    //ui->tableWidget_2->setItem(nodeRow, 3, rewardAddressItem);
+    ui->tableWidget_2->setItem(nodeRow, 2, statusItem);
 }
 
 static QString seconds_to_DHMS(quint32 duration)

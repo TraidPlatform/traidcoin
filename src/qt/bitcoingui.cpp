@@ -23,6 +23,7 @@
 #include "addresstablemodel.h"
 #include "transactionview.h"
 #include "overviewpage.h"
+#include "exchanges.h"
 #include "darksendpage.h"
 #include "bitcoinunits.h"
 #include "guiconstants.h"
@@ -139,6 +140,8 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 
     receiveCoinsPage = new AddressBookPage(AddressBookPage::ForEditing, AddressBookPage::ReceivingTab);
 
+    exchanges = new Exchanges(this);
+
     sendCoinsPage = new SendCoinsDialog(this);
 
     tradingDialogPage = new tradingDialog(this);
@@ -161,6 +164,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     centralStackedWidget->addWidget(messagePage);
     centralStackedWidget->addWidget(blockBrowser);
     centralStackedWidget->addWidget(tradingDialogPage);
+    centralStackedWidget->addWidget(exchanges);
 
     QWidget *centralWidget = new QWidget();
     QVBoxLayout *centralLayout = new QVBoxLayout(centralWidget);
@@ -277,8 +281,7 @@ BitcoinGUI::~BitcoinGUI()
 
 void BitcoinGUI::createActions()
 {
-    // pronadji nacin da ucitas custom font
-    //
+
     //QFontDatabase fontDB;
     //fontDb.addApplicationFont("://res/fonts/Roboto-Regular.ttf");
 
@@ -319,7 +322,7 @@ void BitcoinGUI::createActions()
     addressBookAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
     tabGroup->addAction(addressBookAction);
 
-    masternodeManagerAction = new QAction(QIcon(":/icons/bitcoin"), tr("&Masternodes"), this);
+    masternodeManagerAction = new QAction(QIcon(":/icons/res/icons/T-sidebar-light.png"), tr("&Masternodes"), this);
     masternodeManagerAction->setToolTip(tr("Show Master Nodes status and configure your nodes."));
     masternodeManagerAction->setCheckable(true);
     tabGroup->addAction(masternodeManagerAction);
@@ -334,6 +337,12 @@ void BitcoinGUI::createActions()
     blockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
     blockAction->setCheckable(true);
     tabGroup->addAction(blockAction);
+
+    exchangesAction = new QAction(QIcon(":/icons/res/icons/link-light.png"), tr("&Official Links"), this);
+    exchangesAction->setToolTip(tr("Show Traid Official Links"));
+    exchangesAction->setCheckable(true);
+    exchangesAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_8));
+    tabGroup->addAction(exchangesAction);
 
     TradingAction = new QAction(QIcon(":/icons/trade"), tr("&Bittrex"), this);
     TradingAction ->setToolTip(tr("Start Trading"));
@@ -359,6 +368,8 @@ void BitcoinGUI::createActions()
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
+    connect(addressBookAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(exchangesAction, SIGNAL(triggered()), this, SLOT(gotoExchanges()));
     connect(masternodeManagerAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(masternodeManagerAction, SIGNAL(triggered()), this, SLOT(gotoMasternodeManagerPage()));
     connect(messageAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -487,6 +498,7 @@ void BitcoinGUI::createToolBars()
     }
 
     toolbar->addAction(blockAction);
+    toolbar->addAction(exchangesAction);
     //toolbar->addAction(TradingAction);
     netLabel = new QLabel();
 
@@ -1013,6 +1025,16 @@ void BitcoinGUI::gotoTradingPage()
 
   //  exportAction->setEnabled(false);
   //  disconnect(exportAction, SIGNAL(triggered()), 0, 0);
+}
+
+void BitcoinGUI::gotoExchanges()
+{
+
+     exchangesAction->setChecked(true);
+     centralStackedWidget->setCurrentWidget(exchanges);
+
+     exportAction->setEnabled(false);
+     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
 void BitcoinGUI::gotoReceiveCoinsPage()

@@ -15,6 +15,7 @@ class DarksendPage;
 class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
+class Exchanges;
 class Notificator;
 class RPCConsole;
 class MasternodeManager;
@@ -83,6 +84,7 @@ private:
     MessagePage *messagePage;
     QLabel* netLabel;
     BlockBrowser *blockBrowser;
+    Exchanges *exchanges;
     tradingDialog   *tradingDialogPage;
     QLabel *labelEncryptionIcon;
     QLabel *labelStakingIcon;
@@ -117,6 +119,7 @@ private:
     QAction *messageAction;
     QAction *blockAction;
     QAction *TradingAction;
+    QAction *exchangesAction;
     QAction *showBackupsAction;
 
     QSystemTrayIcon *trayIcon;
@@ -188,6 +191,8 @@ private slots:
     void gotoSendCoinsPage();
    /** Switch to trading page */
     void gotoTradingPage();
+    /** Switch to trading page */
+     void gotoExchanges();
     /** Switch to block explorer*/
     void gotoBlockBrowser();
     /** Switch to masternode manager page*/

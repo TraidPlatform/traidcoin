@@ -599,10 +599,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Confirmations</string>
-      </property>
-      <property name="toolTip">
-       <string>Confirmed</string>
+       <string>Priority</string>
       </property>
      </column>
      <column>
@@ -612,7 +609,10 @@
      </column>
      <column>
       <property name="text">
-       <string>Priority</string>
+       <string>Confirmations</string>
+      </property>
+      <property name="toolTip">
+       <string>Confirmed</string>
       </property>
      </column>
     </widget>

@@ -54,6 +54,31 @@
         <file alias="browse">res/icons/browse.png</file>
         <file alias="trade">res/icons/trade.png</file>
         <file>res/icons/darksend.png</file>
+        <file>res/icons/exchange-icon.png</file>
+        <file>res/icons/announcement.png</file>
+        <file>res/icons/coinmarketcap.png</file>
+        <file>res/icons/discord.png</file>
+        <file>res/icons/explorer.png</file>
+        <file>res/icons/github.png</file>
+        <file>res/icons/instagram.png</file>
+        <file>res/icons/medium.png</file>
+        <file>res/icons/pool.png</file>
+        <file>res/icons/telegram.png</file>
+        <file>res/icons/twitter.png</file>
+        <file>res/icons/website.png</file>
+        <file>res/icons/whitepaper.png</file>
+        <file>res/icons/youtube.png</file>
+        <file>res/icons/links.png</file>
+        <file>res/icons/coingecko.png</file>
+        <file>res/icons/cryptocompare.png</file>
+        <file>res/icons/link.png</file>
+        <file>res/icons/link-light.png</file>
+        <file>res/icons/livecoinwatch.png</file>
+        <file>res/icons/T-sidebar.png</file>
+        <file>res/icons/T-sidebar-light.png</file>
+        <file>res/icons/whattomine.png</file>
+        <file>res/icons/worldcoinindex.png</file>
+        <file>res/icons/wtm.png</file>
     </qresource>
     <qresource prefix="/icons/black">
         <file alias="connect_0">res/icons/black/connect0_16.png</file>
@@ -121,5 +146,9 @@
         <file alias="uk">locale/bitcoin_uk.qm</file>
         <file alias="zh_CN">locale/bitcoin_zh_CN.qm</file>
         <file alias="zh_TW">locale/bitcoin_zh_TW.qm</file>
+    </qresource>
+    <qresource prefix="/exchanges">
+        <file>res/images/crex24-logo.png</file>
+        <file>res/images/CryptoBridge.png</file>
     </qresource>
 </RCC>

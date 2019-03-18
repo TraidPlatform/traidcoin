@@ -60,7 +60,7 @@
      <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -217,16 +217,6 @@
              <column>
               <property name="text">
                <string>IP/Onion</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Reward %</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Reward Address</string>
               </property>
              </column>
              <column>
